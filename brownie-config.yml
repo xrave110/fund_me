@@ -1,0 +1,26 @@
+dependencies:
+  # - <organization/repo>@<version>
+  - smartcontractkit/chainlink-brownie-contracts@1.2.0
+compiler:
+  solc:
+    remappings:
+    # Here you must write what @<name> is refering to
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.2.0'
+dotenv: .env
+networks:
+  # If there is no any predefined network brownie use this default network from here
+  default: development
+  rinkeby: 
+    eth_usd_price_feed: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e"
+    verify: True
+  mainnet-fork: 
+    eth_usd_price_feed: "0xaEA2808407B7319A31A383B6F8B60f04BCa23cE2"
+    verify: False
+  development: 
+    verify: False
+  ganache-local: 
+    verify: False
+wallets:
+  from_key: ${PRIVATE_KEY}
+  
+      
